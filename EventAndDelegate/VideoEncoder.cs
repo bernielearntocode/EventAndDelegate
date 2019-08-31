@@ -22,11 +22,8 @@ namespace EventAndDelegate
         // Step 2 - Define an event based on that delegate
         // Step 3 - Raise the event
 
-        // Step 1
-        public delegate void VideoEncodedEventHandler(object source, VideoEventArgs args);
-
-        // Step 2
-        public event VideoEncodedEventHandler VideoEncoded;
+        // Step 1 & Step 2 are now combined by using the EventHandler<T> keyword
+        public event EventHandler<VideoEventArgs> VideoEncoded;
 
         public void Encode(Video video)
         {
